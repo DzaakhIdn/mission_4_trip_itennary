@@ -82,39 +82,6 @@ dart compile exe bin/main.dart -o trip_organizer
 ./trip_organizer
 ```
 
----
-
-## 💡 Contoh Output
-
-Saat menjalankan `main()`, program akan menampilkan hasil serialisasi dan deserialisasi:
-
-### Output Console
-```
-=== TRIP ORGANIZER SYSTEM ===
-
-📋 Creating Trip Object...
-Trip Object Created: Trip(namaTrip: LIBURAN JEPANG 2026, tanggalMulai: 12 Januari 2026, tanggalAkhir: 28 Januari 2026)
-
-🔄 Serializing to JSON...
-Trip as JSON: {namaTrip: LIBURAN JEPANG 2026, tanggalMulai: 12 Januari 2026, tanggalAkhir: 28 Januari 2026}
-
-🔄 Deserializing from JSON...
-Trip from JSON: Trip(namaTrip: LIBURAN JEPANG 2026, tanggalMulai: 12 Januari 2026, tanggalAkhir: 28 Januari 2026)
-
-✅ Data integrity verified!
-
-📍 Creating ItineraryItem...
-Item 1: ItineraryItem(lokasi: KYOTO, waktu: JAM 8 MALAM, catatan: Berikan rekomendasi pribadi, idTrip: TRIP_001)
-
-JSON Format:
-{lokasi: KYOTO, waktu: JAM 8 MALAM, catatan: Berikan rekomendasi pribadi, idTrip: TRIP_001}
-
-Deserialized Back:
-ItineraryItem(lokasi: KYOTO, waktu: JAM 8 MALAM, catatan: Berikan rekomendasi pribadi, idTrip: TRIP_001)
-```
-
----
-
 ## 📚 Konsep Kunci yang Dipelajari
 
 ### 1. **Serialisasi (Object → JSON)**
@@ -213,8 +180,6 @@ Setelah menyelesaikan project ini, kamu akan bisa:
 
 
 <div align="center">
-
-**⭐ Jika project ini membantu, jangan lupa beri star!**
 
 Made with ❤️ for learning Dart & Flutter
 
