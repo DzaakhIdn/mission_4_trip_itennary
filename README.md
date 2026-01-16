@@ -50,27 +50,6 @@ class ItineraryItem {
 - `toJson()` → Mengubah object `ItineraryItem` menjadi `Map<String, dynamic>`
 - `factory fromJson()` → Membuat object `ItineraryItem` baru dari `Map<String, dynamic>`
 
----
-
-## 📂 Struktur Project
-
-```
-trip-organizer-system/
-├── bin/
-│   └── main.dart                 # File utama untuk menjalankan program
-├── lib/
-│   ├── models/
-│   │   ├── trip.dart             # Class Trip dengan toJson() & fromJson()
-│   │   └── itinerary_item.dart   # Class ItineraryItem dengan toJson() & fromJson()
-│   └── utils/
-│       └── constants.dart        # Konstanta / helper functions (opsional)
-├── pubspec.yaml                  # Dependencies Dart project
-├── README.md                      # File ini
-└── .gitignore                     # Git ignore configuration
-```
-
----
-
 ## 🚀 Cara Menjalankan
 
 ### Prerequisites
@@ -232,85 +211,6 @@ Setelah menyelesaikan project ini, kamu akan bisa:
 | **Database Ready** | Model data yang sudah siap untuk keperluan CRUD operations |
 | **Code Organization** | Struktur folder dan file yang maintainable dan scalable |
 
----
-
-## 📖 Refensi & Resources
-
-- [Dart Official Documentation - Serialization](https://dart.dev/guides/json)
-- [Flutter JSON Serialization Guide](https://docs.flutter.dev/data-and-backend/serialization/json)
-- [Dart Map Class Documentation](https://api.dart.dev/stable/3.0.0/dart-core/Map-class.html)
-- [Factory Constructor - Dart Docs](https://dart.dev/guides/language/language-tour#factory-constructors)
-
----
-
-## 💬 Tips untuk Pengembangan Lebih Lanjut
-
-### 1. Tambah `toString()` Method
-Untuk debugging yang lebih rapi:
-```dart
-@override
-String toString() => 'Trip(namaTrip: $namaTrip, tanggalMulai: $tanggalMulai, tanggalAkhir: $tanggalAkhir)';
-```
-
-### 2. Validasi Data
-Tambahkan validasi di factory `fromJson()`:
-```dart
-factory Trip.fromJson(Map<String, dynamic> json) {
-  if (json['namaTrip'] == null || json['namaTrip'].isEmpty) {
-    throw FormatException('namaTrip tidak boleh kosong');
-  }
-  return Trip(...);
-}
-```
-
-### 3. Gunakan json_serializable Package
-Untuk project yang lebih besar, gunakan code generator:
-```bash
-dart pub add json_serializable
-dart pub add dev:build_runner
-```
-
-### 4. Tambah Unit Tests
-Validasi serialisasi/deserialisasi dengan test:
-```dart
-test('Trip should serialize and deserialize correctly', () {
-  final trip = Trip('JEPANG', '12 Jan', '28 Jan');
-  final json = trip.toJson();
-  final tripFromJson = Trip.fromJson(json);
-  expect(tripFromJson.namaTrip, trip.namaTrip);
-});
-```
-
----
-
-## 📝 Catatan Pengumpulan
-
-- **Tanggal Pengumpulan:** 12 Januari 2026
-- **Format:** Dart console application atau Flutter project
-- **Requirement:** Class Trip + ItineraryItem dengan toJson() & fromJson()
-- **Testing:** Minimal ada `main()` yang menunjukkan proses serialisasi → deserialisasi
-
----
-
-## 👤 Author
-
-- **Nama:** [Isi nama kamu]
-- **Kelas:** [Isi kelas/absen kamu]
-- **Repository:** https://github.com/YOUR_USERNAME/trip-organizer-system
-- **Last Updated:** 16 Januari 2026
-
----
-
-## 📄 License
-
-Project ini dibuat untuk tujuan pembelajaran dan dibawah lisensi **MIT**.
-
-```
-MIT License - Anda bebas menggunakan, memodifikasi, dan mendistribusikan project ini
-dengan menyertakan attribut penulis original.
-```
-
----
 
 <div align="center">
 
